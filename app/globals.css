@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Dark mode (default) */
+  body {
+    @apply bg-noir-950 text-white font-body transition-colors duration-500;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Light mode */
+  .light body {
+    @apply bg-noir-50 text-noir-950;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-white text-noir-950;
+  }
+
+  .light ::selection {
+    @apply bg-noir-950 text-white;
+  }
+
+  /* Thin elegant scrollbar — Webkit */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-noir-950;
+  }
+
+  .light ::-webkit-scrollbar-track {
+    @apply bg-noir-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-noir-500;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-noir-300;
+  }
+
+  /* Scrollbar — Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #6b6b6b #000000;
+  }
+
+  .light {
+    scrollbar-color: #6b6b6b #fafafa;
+  }
+
+  /* Touch-friendly tap targets are handled per-component via padding */
+}
+
+/* ===== Film Grain Overlay ===== */
+@layer components {
+  .film-grain {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")
+      repeat;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+    animation: grain 0.5s steps(10) infinite;
+  }
+
+  /* Lighten grain on mobile for performance */
+  @media (max-width: 768px) {
+    .film-grain {
+      opacity: 0.2;
+      animation: grain 1s steps(6) infinite;
+    }
+  }
+
+  /* ===== Section Divider ===== */
+  .section-divider {
+    @apply w-16 h-px mx-auto;
+    @apply bg-noir-400 dark:bg-noir-400;
+  }
+
+  /* ===== Cinematic Line ===== */
+  .cinematic-line {
+    @apply h-px bg-gradient-to-r from-transparent to-transparent;
+    --tw-gradient-via-position: 50%;
+  }
+
+  .dark .cinematic-line {
+    @apply via-noir-600;
+  }
+
+  .light .cinematic-line {
+    @apply via-noir-200;
+  }
+
+  /* ===== Video Card Wrapper ===== */
+  .video-card {
+    @apply relative overflow-hidden;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .dark .video-card {
+    @apply bg-noir-950 border border-noir-700;
+  }
+
+  .light .video-card {
+    @apply bg-white border border-noir-200;
+  }
+
+  /* Hover only on devices that support it (not touch) */
+  @media (hover: hover) and (pointer: fine) {
+    .dark .video-card:hover {
+      @apply border-noir-400;
+      transform: translateY(-2px);
+    }
+
+    .light .video-card:hover {
+      @apply border-noir-500;
+      transform: translateY(-2px);
+    }
+  }
+
+  /* ===== Page Container ===== */
+  .page-container {
+    @apply min-h-screen transition-colors duration-500;
+    /* Safe area bottom padding for notched devices */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .dark .page-container {
+    @apply bg-noir-950;
+  }
+
+  .light .page-container {
+    @apply bg-noir-50;
+  }
+
+  /* ===== Text Mask Reveal ===== */
+  .text-mask {
+    @apply overflow-hidden;
+  }
+
+  .text-mask > * {
+    @apply inline-block;
+  }
+}
+
+/* ===== Utility Classes ===== */
+@layer utilities {
+  .font-extralight-heading {
+    font-family: var(--font-cormorant);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .font-light-heading {
+    font-family: var(--font-cormorant);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Primary text — bright, high contrast */
+  .text-primary {
+    @apply text-white;
+  }
+
+  .light .text-primary {
+    @apply text-noir-950;
+  }
+
+  /* Secondary/muted text */
+  .text-secondary {
+    @apply text-noir-300;
+  }
+
+  .light .text-secondary {
+    @apply text-noir-500;
+  }
+
+  /* Subtle/caption text */
+  .text-subtle {
+    @apply text-noir-400;
+  }
+
+  .light .text-subtle {
+    @apply text-noir-400;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-px transition-all duration-500;
+  }
+
+  .dark .link-underline::after {
+    @apply bg-white;
+  }
+
+  .light .link-underline::after {
+    @apply bg-noir-950;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Safe area helpers */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0px);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .film-grain {
+    display: none;
+  }
+}
+
+/* ===== Grain Keyframes ===== */
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
