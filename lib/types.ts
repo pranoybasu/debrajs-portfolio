@@ -7,6 +7,7 @@ export interface FilmWork {
   language: string;
   platform?: string;
   youtubeId?: string;
+  posterImage?: string;
   description: {
     en: string;
     it: string;
@@ -63,6 +64,7 @@ export interface ContentStrings {
     films: string;
     musicVideos: string;
     documentaries: string;
+    gallery: string;
     about: string;
     contact: string;
   };

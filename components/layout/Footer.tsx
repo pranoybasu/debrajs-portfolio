@@ -23,9 +23,10 @@ export function Footer() {
             href="https://pranoys-portfolio.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[10px] sm:text-xs dark:text-noir-500 text-noir-400 font-body tracking-wide dark:hover:text-white hover:text-noir-950 transition-colors duration-300 py-1"
+            className="flex items-center justify-center w-7 h-7 rounded-full border dark:border-noir-700 border-noir-300 dark:text-noir-400 text-noir-500 dark:hover:border-white dark:hover:text-white hover:border-noir-950 hover:text-noir-950 transition-colors duration-300 font-heading text-xs tracking-wide"
+            title="Made by Pranoy"
           >
-            Made with <span className="text-red-500">&#9829;</span>
+            P
           </a>
         </div>
       </div>

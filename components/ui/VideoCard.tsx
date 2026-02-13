@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Play, Clock } from "lucide-react";
+import Image from "next/image";
 
 interface VideoCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface VideoCardProps {
   language?: string;
   platform?: string;
   youtubeId?: string;
+  posterImage?: string;
   description: { en: string; it: string };
   status?: "released" | "touring" | "unreleased";
   badge?: string;
@@ -24,6 +26,7 @@ export function VideoCard({
   language: filmLang,
   platform,
   youtubeId,
+  posterImage,
   description,
   status = "released",
   badge,
@@ -54,6 +57,14 @@ export function VideoCard({
             allowFullScreen
             loading="lazy"
             className="absolute inset-0 w-full h-full"
+          />
+        ) : posterImage ? (
+          <Image
+            src={posterImage}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center dark:bg-noir-900 bg-noir-100">

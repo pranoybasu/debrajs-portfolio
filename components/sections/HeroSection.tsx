@@ -63,12 +63,16 @@ export function HeroSection() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 safe-bottom"
+      {/* Scroll indicator — clickable */}
+      <motion.button
+        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 safe-bottom cursor-pointer dark:hover:text-white hover:text-noir-950 transition-colors duration-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 3.2 }}
+        onClick={() => {
+          document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        aria-label="Scroll to work"
       >
         <span className="text-[10px] font-body tracking-widest uppercase dark:text-noir-400 text-noir-500">
           {t.hero.scrollCta}
@@ -79,7 +83,7 @@ export function HeroSection() {
         >
           <ChevronDown size={16} className="dark:text-noir-400 text-noir-500" />
         </motion.div>
-      </motion.div>
+      </motion.button>
 
       {/* Corner frame marks — hidden on small screens */}
       <div className="hidden sm:block absolute top-8 left-8 w-8 h-8 border-t border-l dark:border-noir-600/30 border-noir-300/30" />

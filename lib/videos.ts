@@ -6,29 +6,16 @@ import { FilmWork, MusicVideo, Documentary } from "./types";
 
 export const films: FilmWork[] = [
   {
-    id: "why-not",
-    title: "Why Not",
-    year: 2020,
-    language: "English",
-    platform: "Disney+ Hotstar",
-    youtubeId: "UdtWWS7XeOA",
-    status: "released",
+    id: "isabella",
+    title: "Isabella",
+    year: 2025,
+    language: "Italian",
+    platform: "Athens International Digital Film Festival",
+    posterImage: "/allimageassets/Isabella main poster.jpeg",
+    status: "touring",
     description: {
-      en: "My first short film, written, directed and edited at the age of 19. Featured on Disney+ Hotstar India on a four-year contract. A story born from scarcity that launched an international journey.",
-      it: "Il mio primo cortometraggio, scritto, diretto e montato all'età di 19 anni. In evidenza su Disney+ Hotstar India con un contratto quadriennale. Una storia nata dalla scarsità che ha lanciato un viaggio internazionale.",
-    },
-  },
-  {
-    id: "night-shift",
-    title: "Night Shift",
-    year: 2021,
-    language: "Hindi",
-    platform: "Disney+ Hotstar",
-    youtubeId: "sn-uJtp1uNQ",
-    status: "released",
-    description: {
-      en: "A Hindi-language short film that continued the journey started by 'Why Not.' Also featured on Disney+ Hotstar India, this film solidified the storytelling foundation that earned a full scholarship abroad.",
-      it: "Un cortometraggio in lingua hindi che ha continuato il viaggio iniziato con 'Why Not.' Anche questo in evidenza su Disney+ Hotstar India, ha consolidato le basi narrative che mi hanno fatto guadagnare una borsa di studio completa all'estero.",
+      en: "My first ever film directed in Italian — a foreign language for me. Premiered at the 14th edition of Athens International Digital Film Festival in December 2025. Currently touring film festivals. Coming soon 2026.",
+      it: "Il mio primo film in assoluto diretto in italiano — una lingua straniera per me. Presentato in anteprima alla 14ᵃ edizione dell'Athens International Digital Film Festival nel dicembre 2025. Attualmente in tournée nei festival cinematografici. In arrivo 2026.",
     },
   },
   {
@@ -45,21 +32,35 @@ export const films: FilmWork[] = [
     },
   },
   {
-    id: "isabella",
-    title: "Isabella",
-    year: 2025,
-    language: "Italian",
-    platform: "Athens International Digital Film Festival",
-    status: "touring",
+    id: "night-shift",
+    title: "Night Shift",
+    year: 2021,
+    language: "Hindi",
+    platform: "Disney+ Hotstar",
+    youtubeId: "sn-uJtp1uNQ",
+    status: "released",
     description: {
-      en: "My first ever film directed in Italian — a foreign language for me. Premiered at the 14th edition of Athens International Digital Film Festival in December 2025. Currently touring film festivals.",
-      it: "Il mio primo film in assoluto diretto in italiano — una lingua straniera per me. Presentato in anteprima alla 14ᵃ edizione dell'Athens International Digital Film Festival nel dicembre 2025. Attualmente in tournée nei festival cinematografici.",
+      en: "A Hindi-language short film that continued the journey started by 'Why Not.' Also featured on Disney+ Hotstar India, this film solidified the storytelling foundation that earned a full scholarship abroad.",
+      it: "Un cortometraggio in lingua hindi che ha continuato il viaggio iniziato con 'Why Not.' Anche questo in evidenza su Disney+ Hotstar India, ha consolidato le basi narrative che mi hanno fatto guadagnare una borsa di studio completa all'estero.",
+    },
+  },
+  {
+    id: "why-not",
+    title: "Why Not",
+    year: 2020,
+    language: "English",
+    platform: "Disney+ Hotstar",
+    youtubeId: "UdtWWS7XeOA",
+    status: "released",
+    description: {
+      en: "My first short film, written, directed and edited at the age of 19. Featured on Disney+ Hotstar India on a four-year contract. A story born from scarcity that launched an international journey.",
+      it: "Il mio primo cortometraggio, scritto, diretto e montato all'età di 19 anni. In evidenza su Disney+ Hotstar India con un contratto quadriennale. Una storia nata dalla scarsità che ha lanciato un viaggio internazionale.",
     },
   },
 ];
 
 export const musicVideos: MusicVideo[] = [
-  // --- Pop / Rock (Rome) ---
+  // --- 2024 ---
   {
     id: "inarticulate-romance",
     title: "Inarticulate Ro",
@@ -84,7 +85,6 @@ export const musicVideos: MusicVideo[] = [
       it: "Video musicale ufficiale per Mezzanine Bay. Diretto e montato a Roma — dal sopralluogo al montaggio finale, una visione creativa completa realizzata in terra straniera.",
     },
   },
-  // --- Rap / Hip-Hop ---
   {
     id: "al-capone",
     title: "Al Capone",
@@ -97,6 +97,32 @@ export const musicVideos: MusicVideo[] = [
       it: "Video musicale ufficiale per NC17. Un brano rap incisivo dalla scena underground di Calcutta.",
     },
   },
+  // --- 2023 ---
+  {
+    id: "pagolchoda",
+    title: "Pagolchoda (পাগলচোদা)",
+    year: 2023,
+    location: "Calcutta",
+    category: "rap",
+    youtubeId: "Ca5uV57EZ5g",
+    description: {
+      en: "Official music video for David x Addy. A raw Bangla rap track from the underground scene of Calcutta.",
+      it: "Video musicale ufficiale per David x Addy. Un brano rap bengalese crudo dalla scena underground di Calcutta.",
+    },
+  },
+  {
+    id: "drill",
+    title: "Shyatabhanga Drill",
+    year: 2023,
+    location: "Calcutta",
+    category: "drill",
+    youtubeId: "7mZKx_lP30c",
+    description: {
+      en: "Official music video for Old Boy, released under Mofossol Music. A Bangla drill track — proving that great visuals come from vision, not equipment.",
+      it: "Video musicale ufficiale per Old Boy, pubblicato sotto Mofossol Music. Un brano drill bengalese — a dimostrazione che le grandi immagini nascono dalla visione, non dall'attrezzatura.",
+    },
+  },
+  // --- 2022 ---
   {
     id: "bhoy",
     title: "Bhoy (ভয়)",
@@ -146,30 +172,6 @@ export const musicVideos: MusicVideo[] = [
     },
   },
   {
-    id: "stakes-high",
-    title: "Stakes High",
-    year: 2022,
-    location: "Calcutta",
-    category: "rap",
-    youtubeId: "FrgzYLm18mw",
-    description: {
-      en: "Official music video for MC Highological. Produced by Young Dope — capturing the high-stakes energy of Calcutta's independent hip hop movement.",
-      it: "Video musicale ufficiale per MC Highological. Prodotto da Young Dope — catturando l'energia ad alta tensione del movimento hip hop indipendente di Calcutta.",
-    },
-  },
-  {
-    id: "industry-casino",
-    title: "Industry Casino",
-    year: 2022,
-    location: "Calcutta",
-    category: "rap",
-    youtubeId: "tUjlehBWvHM",
-    description: {
-      en: "Official music video for Zenfriz from the Controversy series. A commentary on the music industry from Calcutta.",
-      it: "Video musicale ufficiale per Zenfriz dalla serie Controversy. Un commento sull'industria musicale da Calcutta.",
-    },
-  },
-  {
     id: "losing-zone",
     title: "Losing Zone",
     year: 2022,
@@ -179,31 +181,6 @@ export const musicVideos: MusicVideo[] = [
     description: {
       en: "Official music video for DAVE ft. Ghostface. Themes of struggle and perseverance from the streets of Calcutta.",
       it: "Video musicale ufficiale per DAVE ft. Ghostface. Temi di lotta e perseveranza dalle strade di Calcutta.",
-    },
-  },
-  {
-    id: "pagolchoda",
-    title: "Pagolchoda (পাগলচোদা)",
-    year: 2023,
-    location: "Calcutta",
-    category: "rap",
-    youtubeId: "Ca5uV57EZ5g",
-    description: {
-      en: "Official music video for David x Addy. A raw Bangla rap track from the underground scene of Calcutta.",
-      it: "Video musicale ufficiale per David x Addy. Un brano rap bengalese crudo dalla scena underground di Calcutta.",
-    },
-  },
-  // --- Drill ---
-  {
-    id: "drill",
-    title: "Shyatabhanga Drill",
-    year: 2023,
-    location: "Calcutta",
-    category: "drill",
-    youtubeId: "7mZKx_lP30c",
-    description: {
-      en: "Official music video for Old Boy, released under Mofossol Music. A Bangla drill track — proving that great visuals come from vision, not equipment.",
-      it: "Video musicale ufficiale per Old Boy, pubblicato sotto Mofossol Music. Un brano drill bengalese — a dimostrazione che le grandi immagini nascono dalla visione, non dall'attrezzatura.",
     },
   },
   {
@@ -233,6 +210,7 @@ export const musicVideos: MusicVideo[] = [
 ];
 
 export const documentaries: Documentary[] = [
+  // --- 2024 ---
   {
     id: "maestro",
     title: "Maestro",
@@ -255,6 +233,7 @@ export const documentaries: Documentary[] = [
       it: "Un documentario su Il Naya (Flavio Bedini), un eccezionale beatboxer e artista di strada underground a Roma. Un'assegnazione dell'Università di Belle Arti di Roma che cattura l'arte sotto la città.",
     },
   },
+  // --- 2023 ---
   {
     id: "freestyle",
     title: "Freestyle",
@@ -264,18 +243,6 @@ export const documentaries: Documentary[] = [
     description: {
       en: "A zero-budget documentary on multilingual freestyle rappers from Rome — featuring Melkan, Yuno and Serena. An assignment from Director Sergio Basso at Rome University of Fine Arts.",
       it: "Un documentario a budget zero su rapper freestyle multilingue di Roma — con Melkan, Yuno e Serena. Un'assegnazione del Direttore Sergio Basso all'Università di Belle Arti di Roma.",
-    },
-  },
-  {
-    id: "save-trams",
-    title: "Save Trams",
-    year: 2019,
-    location: "Calcutta",
-    festival: "Finalist, Barnes Film Festival, UK",
-    youtubeId: "rGHqJKA5-S4",
-    description: {
-      en: "One of the earliest documentary works — a tribute to the iconic trams of Calcutta. Selected as a finalist at the Barnes Film Festival in the United Kingdom.",
-      it: "Uno dei primi lavori documentaristici — un tributo agli iconici tram di Calcutta. Selezionato come finalista al Barnes Film Festival nel Regno Unito.",
     },
   },
   {
@@ -298,6 +265,19 @@ export const documentaries: Documentary[] = [
     description: {
       en: "A cinematography assignment from the Rome University of Fine Arts — a visual study of the historic Monti neighborhood in Rome. Capturing the textures and rhythms of the city.",
       it: "Un'assegnazione di cinematografia dell'Università di Belle Arti di Roma — uno studio visivo dello storico quartiere Monti a Roma. Catturando le texture e i ritmi della città.",
+    },
+  },
+  // --- 2019 ---
+  {
+    id: "save-trams",
+    title: "Save Trams",
+    year: 2019,
+    location: "Calcutta",
+    festival: "Finalist, Barnes Film Festival, UK",
+    youtubeId: "rGHqJKA5-S4",
+    description: {
+      en: "One of the earliest documentary works — a tribute to the iconic trams of Calcutta. Selected as a finalist at the Barnes Film Festival in the United Kingdom.",
+      it: "Uno dei primi lavori documentaristici — un tributo agli iconici tram di Calcutta. Selezionato come finalista al Barnes Film Festival nel Regno Unito.",
     },
   },
 ];

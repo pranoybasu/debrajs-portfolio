@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/films", key: "films" as const },
   { href: "/music-videos", key: "musicVideos" as const },
   { href: "/documentaries", key: "documentaries" as const },
+  { href: "/gallery", key: "gallery" as const },
   { href: "/about", key: "about" as const },
   { href: "/contact", key: "contact" as const },
 ];

@@ -53,6 +53,7 @@ export default function FilmsPage() {
                     language={film.language}
                     platform={film.platform}
                     youtubeId={film.youtubeId}
+                    posterImage={film.posterImage}
                     description={film.description}
                     status={film.status}
                     badge={
